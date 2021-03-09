@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "554310136699",
+    "project_id": "datum-34da8",
+    "storage_bucket": "datum-34da8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554310136699:android:c75cc43f1a2308258fc3de",
+        "android_client_info": {
+          "package_name": "ezcoding.datum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554310136699-cecce2e5t77mn0ov69g42c0isoqv9ddl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrrZSoVPR44N028sZYRNvcWDuKph3z3-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554310136699-cecce2e5t77mn0ov69g42c0isoqv9ddl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
