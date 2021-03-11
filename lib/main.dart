@@ -1,33 +1,37 @@
+import 'package:datum/services/auth.dart';
+import 'package:datum/views/home.dart';
+import 'package:datum/views/wrapper.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'models/user.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+      MultiProvider(
+          providers: [
+      Provider<User>(
+        create: (context) => User(),
+      ),
+  ],
+        child: MyApp(),
+      ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blueGrey,
-          title: Text('Datum', style: TextStyle(
-            fontSize: 22,
-            color: Colors.black,
-          ),),
-        ),
-        body: Container(
-          color: Colors.blueGrey[300],
-          child: Text('sqrt(data)=DATUM',
-          style: TextStyle(
-            fontSize: 35
-          ),),
-        ),
+    return StreamProvider<User>.value(
+      value: AuthService().user,
+      child: MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/': (context) => Wrapper(),
+          '/home': (context) => Home(),
+        },
+        debugShowCheckedModeBanner: false,
+
       ),
     );
   }
