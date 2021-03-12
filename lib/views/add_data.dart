@@ -11,6 +11,7 @@ class _AddDataState extends State<AddData> {
 
   final _formKey = GlobalKey<FormState>();
   final AuthService _auth = AuthService();
+  String title = '';
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,18 @@ class _AddDataState extends State<AddData> {
         decoration: bgDec,
         child: Column(
           children: [
-            
+            TextFormField(
+              decoration:
+              textInputDecoration.copyWith(hintText: 'Title'),
+              validator: (val) =>
+              val.isEmpty ? 'Enter a Title' : null,
+              onChanged: (val) {
+                  setState(() {
+                    title = val;
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),
