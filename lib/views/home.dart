@@ -45,12 +45,12 @@ class _HomeState extends State<Home> {
         decoration: bgDec,
         child: Column(
           children: [
-            Text('sqrt(data)=DATUM',
-                style: TextStyle(
-                  fontSize: 35,
-                  color: Colors.white,
-                ),
-              ),
+            // Text('sqrt(data)=DATUM',
+            //     style: TextStyle(
+            //       fontSize: 35,
+            //       color: Colors.white,
+            //     ),
+            //   ),
             FlatButton(
               color: Colors.white,
               onPressed: () {
@@ -68,6 +68,9 @@ class _HomeState extends State<Home> {
                   style: TextStyle(
                 ),
               ),
+            ),
+            FlatButton(
+              child: Text(''),
             ),
           ],
         ),

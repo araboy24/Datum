@@ -49,6 +49,9 @@ dev_dependencies:
 
   # Google sign in button
   flutter_signin_button: ^1.1.0
+
+  intl: ^0.16.1
+
   flutter_test:
     sdk: flutter
 
