@@ -59,7 +59,7 @@ class AuthService {
           email: email, password: password);
       FirebaseUser user = result.user;
 
-      //await DatabaseService(uid: user.uid).initUserData();
+      await DatabaseService(uid: user.uid).newUserDataInit();
       // await DatabaseService(uid: user.uid).initUserLevels();
 
       return _userFromFirebaseUser(user);
