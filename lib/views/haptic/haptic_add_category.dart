@@ -2,12 +2,12 @@ import 'package:datum/services/auth.dart';
 import 'package:datum/shared/constants.dart';
 import 'package:flutter/material.dart';
 
-class HapticAddGoal extends StatefulWidget {
+class HapticAddCategory extends StatefulWidget {
   @override
-  _HapticAddGoalState createState() => _HapticAddGoalState();
+  _HapticAddCategoryState createState() => _HapticAddCategoryState();
 }
 
-class _HapticAddGoalState extends State<HapticAddGoal> {
+class _HapticAddCategoryState extends State<HapticAddCategory> {
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
@@ -40,29 +40,35 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
             SizedBox(height: 24),
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                FlatButton(
+                RaisedButton(
+                  color: Colors.grey[800],
                     child: Text('Symbol', style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       ),
                     ),
-                    color: Colors.white),
-                FlatButton(
+                    ),
+                RaisedButton(
+                    color: Colors.grey[800],
                     child: Text('Color', style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       ),
                     ),
-                    color: Colors.white),
-              ]
+                ),
+              ],
             ),
             SizedBox(height: 8,),
             Row(
 
               children: [
-                Text('ACTIVITES', style: TextStyle(
-                  color: Colors.grey[500],
-                  fontSize: 15,
-                ),)  ,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('ACTIVITES', style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 15,
+                  ),),
+                )  ,
                 Spacer(),
               ]
             ),
@@ -77,7 +83,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -85,7 +91,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -93,7 +99,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -101,7 +107,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                   ],
                 ),
@@ -115,7 +121,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -123,7 +129,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -131,7 +137,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -139,7 +145,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                   ],
                 ),
@@ -153,7 +159,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -161,7 +167,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -169,7 +175,7 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                     FlatButton(
                       minWidth: 50,
@@ -177,18 +183,19 @@ class _HapticAddGoalState extends State<HapticAddGoal> {
                       onPressed: null,
                       child: Icon(Icons.video_collection,
                         color: Colors.grey[600],
-                        size: 35,),
+                        size: 50,),
                     ),
                   ],
                 ),
                 SizedBox(height: 12,),
+                ElevatedButton(
+                    onPressed: null,
+                    child: Text('Save', style: TextStyle(color: Colors.black),),
+                ),
               ],
             )
           ],
-
-
         ),
-
       ),
     );
   }
