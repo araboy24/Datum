@@ -15,7 +15,28 @@ class _HapticSettingsState extends State<HapticSettings> {
     final AuthService _auth = AuthService();
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: basicAppBar(_auth),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.blueGrey[200],
+
+        title: Text('DATUM', style: TextStyle(
+          fontSize: 35,
+          fontWeight: FontWeight.bold,
+          color: Colors.grey[800],
+        ),
+        ),
+        actions: [
+          FlatButton.icon(onPressed: () async {
+            await _auth.signOut();
+          },
+            icon: Icon(
+              Icons.logout,
+              color: Colors.grey[800],
+            ),
+            label: Text(''),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
 
         child: Container(
@@ -27,7 +48,7 @@ class _HapticSettingsState extends State<HapticSettings> {
               Container(
                 margin: EdgeInsets.all(24),
                 child: IconButton(
-                    icon: Icon(Icons.camera,
+                    icon: Icon(Icons.camera_alt,
                       size: 60,
                     ),
                     onPressed: null),

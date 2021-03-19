@@ -1,12 +1,21 @@
+import 'package:datum/models/categories.dart';
+import 'package:datum/services/database.dart';
 import 'package:datum/shared/constants.dart';
+import 'package:datum/shared/loading.dart';
 import 'package:datum/views/haptic/haptic_add_category.dart';
 import 'package:datum/views/haptic/haptic_settings.dart';
 import 'package:datum/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:datum/services/auth.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+import 'package:datum/models/user.dart';
 
 class HapticHome extends StatefulWidget {
+
+  final CategoryData categoryData;
+  const HapticHome({this.categoryData});
+
   @override
   _HapticHomeState createState() => _HapticHomeState();
 }
@@ -16,10 +25,17 @@ class _HapticHomeState extends State<HapticHome> {
   static final DateTime now = DateTime.now();
   static final DateFormat formatter = DateFormat('MM-dd-yyyy');
   final String formatted = formatter.format(now);
+
    // something like 2013-04-20
   @override
   Widget build(BuildContext context) {
-
+    final user = Provider.of<User>(context);
+    return StreamBuilder<CategoryData>(
+        stream: DatabaseService(uid: user.uid).categoriesData,
+    builder: (context, snapshot) {
+    if (snapshot.hasData) {
+    CategoryData categoryData = snapshot.data;
+    categoryData.printData();
     return Scaffold(
 
       appBar: basicAppBar(_auth),
@@ -128,5 +144,11 @@ class _HapticHomeState extends State<HapticHome> {
         ),
       ),
     );
+    } else {
+      print('Snapshot Had no data....');
+      print(snapshot.data);
+      return Loading();
+    }
+    });
   }
 }

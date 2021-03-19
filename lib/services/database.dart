@@ -1,10 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:datum/models/categories.dart';
 import 'package:datum/models/user.dart';
 
 class DatabaseService {
   final String uid;
   DatabaseService({this.uid});
   final CollectionReference usersCollection = Firestore.instance.collection('users');
+  // final DocumentReference categoriesDocument = Firestore.instance.collection('users')
+  //     .document(uid).collection('categories').document(uid + '_categories');
 
   Future addData(title, measurement, unit) async {
     return await usersCollection.document(uid).setData(
@@ -101,6 +104,20 @@ class DatabaseService {
 
     });
   }
+
+  CategoryData _categoryDataFromSnapshot(DocumentSnapshot snapshot){
+    return CategoryData(
+      trackedCategories: snapshot.data
+    );
+  }
+
+
+  Stream<CategoryData> get categoriesData {
+   return usersCollection.document(uid).collection('categories')
+       .document(uid + '_categories').snapshots().map(_categoryDataFromSnapshot);
+
+  }
+
 
 }
 
