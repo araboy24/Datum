@@ -23,7 +23,7 @@ class HapticHome extends StatefulWidget {
 class _HapticHomeState extends State<HapticHome> {
   final AuthService _auth = AuthService();
   static final DateTime now = DateTime.now();
-  static final DateFormat formatter = DateFormat('MM-dd-yyyy');
+  static final DateFormat formatter = DateFormat('mm-dd-yyyy');
   final String formatted = formatter.format(now);
 
    // something like 2013-04-20

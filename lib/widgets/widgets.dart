@@ -48,3 +48,21 @@ Widget getDataFromFirebase(context, title){
       ),
   );
 }
+
+
+// Container of all the tracked categories
+Widget trackedCategoriesForHome(Map categories, context){
+
+  return Container(
+    padding: EdgeInsets.all(20),
+    margin: EdgeInsets.all(8),
+    width: MediaQuery.of(context).size.width - 10,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Column(
+
+    ),
+  );
+}
